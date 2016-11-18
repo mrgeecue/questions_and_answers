@@ -1,0 +1,12 @@
+<div ng-controller="QuestionsListController">
+    <a href="#/">Home</a> || <a href="#/logout">Logout</a>
+
+    <form ng-submit="create()">
+        <p>Question: <textarea ng-model="newQuestion.question"class="form-control" rows="3"></textarea></p>
+        <p>Description: (optional) <textarea ng-model="newQuestion.description" class="form-control" rows="3"></textarea></p>
+        <a ng-href="#/">Cancel</a>
+        <button class='btn btn-primary' ng-href="#/questions" value="submit">Submit</button>
+        <a ng-href="#/questions" value="submit" >Questions</a></a>
+     </form>
+
+</div>

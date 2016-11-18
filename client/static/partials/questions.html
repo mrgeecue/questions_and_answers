@@ -1,0 +1,24 @@
+
+<div ng-controller="QuestionsListController">
+   <h1>Hello <span ng-bind="name"></span></h1>
+    <a href="#/new_question">Add a question</a> || <a href="#/index">Logout</a>
+    <input class="search" type="text" ng-model="filter_question" placeholder="Search"><span class="gray" ></span>
+    <table class="table table-striped">
+   <thead>
+       <tr>
+           <th>Question</th>
+           <th>Answers </th>
+           <th>Action </th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr ng-repeat="question in questions | filter: filter_question | orderBy:'name'">
+           <td>{{question}}</td>
+           <td>{{answer}}</td>
+           <td><a href="#/question/{{question._id}}">Show</a> <a href="#/question/{{question._id}}/new_answer">Answer</a></td>
+           <!-- <td><input class="btn btn-primary" ng-click='show($index)' type="submit" value="Show" />
+             <input class="btn btn-primary" ng-click='answer($index)' type="submit" value="Answer" /></td> -->
+       </tr>
+   </tbody>
+</table>
+</div>
